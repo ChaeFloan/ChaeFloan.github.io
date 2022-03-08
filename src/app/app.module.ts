@@ -12,7 +12,6 @@ import { UnicornService } from './services/unicorn.service';
 
 const routes: Routes = [
   { path: 'create_unicorn', component: UniFormComponent },
-  { path: 'home', component: UniListComponent },
   { path: '', component: UniListComponent },
   { path: 'not-found', component: UniListComponent },
   { path: '**', redirectTo: 'not-found' },

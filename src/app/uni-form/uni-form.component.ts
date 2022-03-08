@@ -36,7 +36,7 @@ export class UniFormComponent implements OnInit {
   onSubmit() {
     this.unicornService.addUniProfile(this.uniForm.value);
     this.uniForm.reset(this.uniForm.value);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/');
   }
 
 }
