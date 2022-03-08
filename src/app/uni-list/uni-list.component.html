@@ -1,0 +1,24 @@
+<div class="main-content-header-buttons">
+    <div class="background-image">
+        <div>
+            <button *ngIf="!matchInProgress" [disabled]="wantABaby" [style.opacity]="!wantABaby ? '1' : '0.5'" (click)="onClickMakeAMatchOrCancel()">Make a match &#x2764;</button>
+            <button *ngIf="matchInProgress" (click)="onClickMakeAMatchOrCancel()">Cancel</button>
+        </div>
+        <div>
+        </div>
+        <div>
+            <button *ngIf="!wantABaby" [disabled]="matchInProgress" [style.opacity]="!matchInProgress ? '1' : '0.5'" (click)="onClickWantABabyOrCancel()">Want a baby ?</button>
+            <button *ngIf="wantABaby" (click)="onClickWantABabyOrCancel()">Cancel</button>
+        </div>
+        <div>
+        </div>
+        <div>
+            <button [disabled]="matchInProgress || wantABaby" [ngClass]="{'opacityHalf': matchInProgress || wantABaby, 'opacityFull':  !matchInProgress || !wantABaby}" (click)="openUnicornForm()">Create a Unicorn !</button>
+        </div>
+    </div>
+</div>
+<div class="main-content align-justify-center">
+        <app-uni-profile *ngFor="let singleUniProfile of uniProfiles; let i = index" [index]="i" [uniProfile]="singleUniProfile">
+        </app-uni-profile>
+</div>
+  

@@ -1,0 +1,47 @@
+<div class="card-profile" *ngIf="(!getMatchStatus() && !getWantABabyStatus()) || (getMatchStatus() && uniProfile.loverName === '') || (getWantABabyStatus() && uniProfile.isHeteroRelationship && !uniProfile.childName)">
+    <img src="../../assets/images/unicorn.png" [alt]="uniProfile.name" [ngStyle]="{ backgroundColor: uniProfile.color}" class="parentImg">
+    <div class="card-uni-profile">
+
+        <div>
+            <div class="display-flex align-justify-center">
+                <p>{{ uniProfile.name }}, {{ uniProfile.age }} ans &nbsp;</p>
+                <p *ngIf="uniProfile.childName">({{ transformGenderDisplay(uniProfile.gender) }})</p>
+            </div>
+
+            <div *ngIf="uniProfile.loverName === ''" [ngStyle]="{ backgroundColor: uniProfile.color}" class="background-div">
+                <p>Single <span style="color: rgb(255, 208, 0);">&#x2764;</span></p>
+            </div>
+            
+            <div *ngIf="uniProfile.loverName !== ''" [ngStyle]="{ backgroundColor: uniProfile.color}" class="background-div">
+                <p>In love with {{ uniProfile.loverName }} <span style="color: red;">&#x2764;</span></p>
+            </div>
+
+            <p *ngIf="!uniProfile.childName"><span>Gender : </span>{{ uniProfile.gender }} </p>
+
+            <div *ngIf="getMatchStatus() && uniProfile.loverName === ''" class="align-justify-center display-column btn-select-choose-confirm">
+                <button *ngIf="!uniProfile.firstSelected && !uniProfile.secondSelected" (click)="onClickSelectThisOne(uniProfile.id)">Select this one ! <span style="color: rgb(43, 90, 219);">&#x2764;</span></button>
+                    <p *ngIf="uniProfile.firstSelected">Choose another one ! <span style="color: rgb(43, 90, 219);">&#x2764;</span></p>
+            </div>
+
+            <div *ngIf="getMatchStatus() && uniProfile.loverName === ''" class="align-justify-center display-column btn-select-choose-confirm">
+                <button *ngIf="uniProfile.secondSelected" (click)="onClickConfirmMatch()">Confirm the match</button>
+                <button *ngIf="uniProfile.firstSelected || uniProfile.secondSelected" (click)="onClickCancelTheSelection(uniProfile.id)" >Cancel</button>
+            </div>
+
+            <div *ngIf="uniProfile.loverName !== ''">
+                <button *ngIf="getWantABabyStatus() && uniProfile.isHeteroRelationship && !uniProfile.childName" (click)="onClickCreateABaby(uniProfile.id)">Make a baby !!</button>
+                <div *ngIf="uniProfile.childName" class="display-column align-justify-center">
+                    <p><span>Have a child :</span></p>
+                    <div class="display-column align-justify-center">
+                        <p>{{ uniProfile.childName }}</p>
+                        <div class="childImg" [ngStyle]="{ backgroundColor: getChildColor1(uniProfile.id)}">
+                            <img src="../../assets/images/unicorn.png" [alt]="uniProfile.name" [ngStyle]="{ backgroundColor: getChildColor2(uniProfile.id)}" class="childImg">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+    </div>
+</div>

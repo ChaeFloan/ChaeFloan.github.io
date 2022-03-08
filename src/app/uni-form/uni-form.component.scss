@@ -1,0 +1,50 @@
+.container-form-page {
+  width: 100%;
+  height: auto;
+  > div:first-child {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  div a {
+    text-decoration: none;
+    color: white;
+  }
+  .container-form {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.575) 0px 7px 29px 0px;
+    font-size: 1.8rem;
+    form {
+      .bloc-input-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        > div {
+          height: auto;
+        }
+        div {
+          margin: 10px 20px;
+          min-height: 148px;
+          min-width: 257.2px;
+          label {
+            margin: 15px 0;
+          }
+          input {
+            width: 250px;
+          }
+        }
+      }
+      .btn-form {
+        margin-top: 20px;
+        button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<div class="container-form-page display-column align-justify-center">
+    <div>
+        <a routerLink="/home">Retour à l'accueil</a>
+    </div>
+    
+    <div class="container-form">
+    
+        <form [formGroup]="uniForm" (ngSubmit)="onSubmit(); uniForm.reset()" class="display-column align-justify-center">
+            <div class="bloc-input-form">
+                <div class="align-center-justify-start display-column">
+                    <label for="name">Unicorn's name</label><br>
+                    <input formControlName="name" type="text" minLength="2" maxlength="15">
+                    <p style="font-size: 1.2rem;">Entre 2 et 15 caractères.</p>
+                </div>
+            
+                <div class="align-center-justify-start display-column">
+                    <label for="gender">Gender</label><br>
+                    <select formControlName="gender" type="text">
+                        <option *ngFor="let gender of genders" [ngValue]="gender">{{ gender.type }}</option>
+                    </select>
+                </div>
+            
+                <div class="align-center-justify-start display-column">
+                    <label for="age">Age</label><br>
+                    <input formControlName="age" type="number" maxLength="3" max="150">
+                    <p style="font-size: 1.2rem;">Max : 150 ans</p>
+                </div>
+
+                <div class="align-center-justify-start display-column">
+                    <label for="color">Color</label><br>
+                    <input formControlName="color" type="text" placeholder='Format "#XXXXXX"' minlength="7" maxlength="7" ngModel pattern="^#[0-9A-Fa-f]{6}$">
+                    <p style="font-size: 1.2rem;">Exemple : #98b0d0</p>
+                </div>
+            </div>
+            <div class="align-center-justify-start display-column btn-form">
+                <button type="submit" [disabled]="!uniForm.valid">Submit</button>
+                <button routerLink="/home">Cancel</button>
+            </div>
+    
+        </form>
+    </div>
+    
+</div>

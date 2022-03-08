@@ -1,0 +1,57 @@
+nav {
+  background-image: linear-gradient(
+    to bottom,
+    #d80ed0,
+    #e336d2,
+    #ed4ed4,
+    #f763d7,
+    #ff77db
+  );
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+  div {
+    background-image: url(../../assets/images/background-3-opacity.png);
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: white;
+      font-family: "Berkshire Swash", cursive;
+      letter-spacing: 0.5rem;
+      text-align: center;
+    }
+  }
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+// MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES MEDIA QUERIES
+
+@media screen and (min-width: 840px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (min-width: 630px) and (max-width: 839.9px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 629.9px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+}
+
+@media screen and (max-width: 359.9px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
