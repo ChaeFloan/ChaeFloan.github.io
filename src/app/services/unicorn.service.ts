@@ -251,6 +251,8 @@ export class UnicornService {
 
   }
 
+  // POUR LE TEMPLATE => On récupère la couleur du parent 1 puis du parent 2 (voir méthode getChildColor2) afin de les mélanger 
+  // (opacité gérée depuis le service > création d'un enfant)
   getChildFirstColor(uniProfileId: number) {
     return this.getUnicornById(uniProfileId).childFirstColor;
   }

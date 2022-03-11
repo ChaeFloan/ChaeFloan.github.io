@@ -13,9 +13,6 @@ export class UniProfileComponent implements OnInit {
   @Input() uniProfile!: UniProfile;
   @Input() index!: any;
 
-  // firstSelected?: boolean = false;
-  // secondSelected?: boolean = false;
-
   wantABaby: boolean = false;
   
   // UTILISATION D'UNE OBSERVABLE AFIN D'INFORMER LE COMPOSANT PARENT D'UN CHANGEMENT D'ÉTAT DANS LE COMPOSANT ENFANT POUR LA VARIABLE "wantABaby"
